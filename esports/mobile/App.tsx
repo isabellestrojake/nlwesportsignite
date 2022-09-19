@@ -1,6 +1,6 @@
 import { StatusBar } from 'react-native';
 import { Background } from './src/components/Background';
-import { 
+import {
   useFonts,
   Inter_400Regular,
   Inter_600SemiBold,
@@ -9,6 +9,7 @@ import {
 } from '@expo-google-fonts/inter';
 import { Routes } from './src/routes';
 import { Loading } from './src/components/Loading';
+import './src/services/notificationsConfigs';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -20,12 +21,12 @@ export default function App() {
 
   return (
     <Background>
-      <StatusBar 
+      <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
-    { fontsLoaded ? <Routes /> : <Loading />}
+      {fontsLoaded ? <Routes /> : <Loading />}
     </Background>
   );
 }
